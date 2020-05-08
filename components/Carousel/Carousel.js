@@ -17,3 +17,69 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+const carouselGroup = document.querySelector(".carousel.container");
+
+carouselGroup.appendChild(createCarousel());
+
+function createCarousel() {
+  //the carousel div
+  //add carousel class
+  //div for left button
+  //add class for left button
+  //imgs 1-4
+  //div for right button
+  //div class right button
+  const carouselDiv = document.createElement("div");
+  carouselDiv.classList.add = "carousel";
+  carouselDiv.style.display = "block";
+
+  const leftBtnDiv = document.createElement("div");
+  leftBtnDiv.classList.add = "left-button";
+  leftBtnDiv.textContent = "<";
+
+  const img1 = document.createElement("img");
+  img1.src = "./assets/carousel/mountains.jpeg";
+  img1.classList.add = "carousel-img-1";
+
+  const img2 = document.createElement("img");
+  img2.src = "./assets/carousel/computer.jpeg";
+  img2.classList.add = "carousel-img-2";
+
+  const img3 = document.createElement("img");
+  img3.src = "./assets/carousel/trees.jpeg";
+  img3.classList.add = "carousel-img-3";
+
+  const img4 = document.createElement("img");
+  img4.src = "./assets/carousel/turntable.jpeg";
+  img4.classList.add = "carousel-img-4";
+
+  const rightBtnDiv = document.createElement("div");
+  rightBtnDiv.classList.add = "right-button";
+  rightBtnDiv.textContent = ">";
+
+  //appendchild
+  carouselDiv.appendChild(leftBtnDiv);
+  carouselDiv.appendChild(img1);
+  carouselDiv.appendChild(img2);
+  carouselDiv.appendChild(img3);
+  carouselDiv.appendChild(img4);
+  carouselDiv.appendChild(rightBtnDiv);
+
+  //create index????
+
+  let currentIndex = 0; // set an index????
+
+  rightBtnDiv.addEventListener("click", () => {
+    currentIndex + 1; //add one index per click to forward????
+  });
+
+  leftBtnDiv.addEventListener("click", () => {
+    currentIndex - 1; //remove one index per click to go back???
+  });
+
+  return carouselDiv;
+}
+
+const newCarouselDiv = document.querySelector(".carousel-container"); //create the new carousel and append to the function???
+newCarouselDiv.appendChild(createCarousel());
