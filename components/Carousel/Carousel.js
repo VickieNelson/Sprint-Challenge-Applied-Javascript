@@ -22,7 +22,7 @@ const carouselGroup = document.querySelector(".carousel.container");
 
 carouselGroup.appendChild(createCarousel());
 
-function createCarousel(img1, img2, img3, img4) {
+function createCarousel() {
   //the carousel div
   //add carousel class
   //div for left button
@@ -58,10 +58,28 @@ function createCarousel(img1, img2, img3, img4) {
   rightBtnDiv.classList.add = "right-button";
   rightBtnDiv.textContent = ">";
 
+  //appendchild
   carouselDiv.appendChild(leftBtnDiv);
   carouselDiv.appendChild(img1);
   carouselDiv.appendChild(img2);
   carouselDiv.appendChild(img3);
   carouselDiv.appendChild(img4);
   carouselDiv.appendChild(rightBtnDiv);
+
+  //create index????
+
+  let currentIndex = 0; // set an index????
+
+  rightBtnDiv.addEventListener("click", () => {
+    currentIndex + 1; //add one index per click to forward????
+  });
+
+  leftBtnDiv.addEventListener("click", () => {
+    currentIndex - 1; //remove one index per click to go back???
+  });
+
+  return carouselDiv;
 }
+
+const newCarouselDiv = document.querySelector(".carousel-container"); //create the new carousel and append to the function???
+newCarouselDiv.appendChild(createCarousel());
