@@ -79,4 +79,32 @@ axios
     console.log(error);
   });
 
-function createCards(headline, authorImage, authorName) {}
+function createCards(headline, authorImage, authorName) {
+  //variables
+  const card = document.createElement("div");
+  const articleHeadline = document.createElement("div");
+  const author = document.createElement("div");
+  const imgContain = document.createElement("div");
+  const authorImg = document.createElement("img");
+  const byAuthor = document.createElement("span");
+
+  //classes
+  card.classList.add("card");
+  articleHeadline.classList.add("headline");
+  author.classList.add("author");
+  imgContain.classList.add("img-container");
+
+  //content
+  articleHeadline.textContent = headline;
+  authorImg.setAttribute("src", authorImage);
+  byAuthor.textContent = `By ${authorName}`;
+
+  //appendchild
+  card.appendChild(articleHeadline);
+  card.appendChild(author);
+  author.appendChild(imgContain);
+  imgContain.appendChild(authorImg);
+  author.appendChild(byAuthor);
+
+  return card;
+}
