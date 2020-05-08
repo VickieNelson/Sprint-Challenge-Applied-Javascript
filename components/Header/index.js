@@ -24,12 +24,17 @@ function Header() {
   temp.classList.add("temp");
 
   //appendChild to header
-  header.appendChild.apply(date);
-  header.appendChild.apply(title);
-  header.appendChild.apply(temp);
+  header.appendChild(date);
+  header.appendChild(title);
+  header.appendChild(temp);
 
   //add content
   date.textContent = "Smarch 28, 2019";
   title.textContent = "Lambda Times";
   temp.textContent = "98°";
+
+  return header; //return the header const
 }
+
+let header = document.querySelector(".header-container");
+header.appendChild(Header(header));
