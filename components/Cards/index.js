@@ -35,6 +35,30 @@ axios
         createCards(card.headline, card.authorPhoto, card.authorName)
       );
     });
+
+    articles.javascript.forEach((card) => {
+      cards.appendChild(
+        createCards(card.headline, card.authorPhoto, card.authorName)
+      );
+    });
+
+    articles.jquery.forEach((card) => {
+      cards.appendChild(
+        createCards(card.headline, card.authorPhoto, card.authorName)
+      );
+    });
+
+    articles.node.forEach((card) => {
+      cards.appendChild(
+        createCards(card.headline, card.authorPhoto, card.authorName)
+      );
+    });
+
+    articles.technology.forEach((card) => {
+      cards.appendChild(
+        createCards(card.headline, card.authorPhoto, card.authorName)
+      );
+    });
   });
 
 //response.data.articles  within here, we have 5 arrays filled with objects. Each array corresponds with a topic.
