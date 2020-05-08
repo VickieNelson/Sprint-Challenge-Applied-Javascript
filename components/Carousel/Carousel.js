@@ -22,7 +22,7 @@ const carouselGroup = document.querySelector(".carousel.container");
 
 carouselGroup.appendChild(createCarousel());
 
-function createCarousel() {
+function createCarousel(img1, img2, img3, img4) {
   //the carousel div
   //add carousel class
   //div for left button
@@ -32,24 +32,31 @@ function createCarousel() {
   //div class right button
   const carouselDiv = document.createElement("div");
   carouselDiv.classList.add = "carousel";
+  carouselDiv.style.display = "block";
 
   const leftBtnDiv = document.createElement("div");
   leftBtnDiv.classList.add = "left-button";
+  leftBtnDiv.textContent = "<";
 
   const img1 = document.createElement("img");
   img1.src = "./assets/carousel/mountains.jpeg";
+  img1.classList.add = "carousel-img-1";
 
   const img2 = document.createElement("img");
   img2.src = "./assets/carousel/computer.jpeg";
+  img2.classList.add = "carousel-img-2";
 
   const img3 = document.createElement("img");
   img3.src = "./assets/carousel/trees.jpeg";
+  img3.classList.add = "carousel-img-3";
 
   const img4 = document.createElement("img");
   img4.src = "./assets/carousel/turntable.jpeg";
+  img4.classList.add = "carousel-img-4";
 
   const rightBtnDiv = document.createElement("div");
   rightBtnDiv.classList.add = "right-button";
+  rightBtnDiv.textContent = ">";
 
   carouselDiv.appendChild(leftBtnDiv);
   carouselDiv.appendChild(img1);
