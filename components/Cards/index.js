@@ -21,6 +21,22 @@
 
 //axios
 
+axios
+  .get(`https://lambda-times-backend.herokuapp.com/articles`)
+  .then((heorkuData) => {
+    console.log(heorkuData);
+
+    const articles = heorkuData.data.articles;
+    const cards = document.querySelector(".cards-container");
+    console.log(articles);
+
+    articles.bootstrap.forEach((card) => {
+      cards.appendChild(
+        createCards(card.headline, card.authorPhoto, card.authorName)
+      );
+    });
+  });
+
 //response.data.articles  within here, we have 5 arrays filled with objects. Each array corresponds with a topic.
 
 //articles is itself an object. we've got bootstrap, javascript, jquery, node, technology as arrays with arrays inside
@@ -31,4 +47,4 @@
 
 //probably want to do Object.entries. so first const articleEntries = Object.entries(articles); and then we can do articleEntries.forEach
 
-//deconstruct Article Object using Object.entries and  .forEach method on its values, which happen to be the arrays that were matched with topic keys.
+//deconstruct Article Object using Object.entries and .forEach method on its values, which happen to be the arrays that were matched with topic keys.
